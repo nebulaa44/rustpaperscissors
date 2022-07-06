@@ -1,5 +1,7 @@
+mod game;
 mod logic;
 
-fn main() {
-    println!("Hello, world!");
+fn main() 
+{
+    game::game_loop();
 }
