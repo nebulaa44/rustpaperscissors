@@ -4,19 +4,20 @@ pub enum Action
 {
   Rock,
   Paper,
-  Scissors
+  Scissors,
+  Other
 }
 
 impl Action
 {
-  pub fn from_string(input: &String) -> Option<Self>
+  pub fn from_string(input: &String) -> Self
   {
     match input.trim()
     {
-      "r" => Some(Action::Rock),
-      "p" => Some(Action::Paper),
-      "s" => Some(Action::Scissors),
-      _ => None
+      "r" => Action::Rock,
+      "p" => Action::Paper,
+      "s" => Action::Scissors,
+      _ => Action::Other
     }
   }
 }

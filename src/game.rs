@@ -21,7 +21,6 @@ pub fn game_loop()
       .read_line(&mut player_choice)
       .expect("Could not read input");
 
-    // TODO: actually handle an error here
-    let player_action = Action::from_string(&player_choice).unwrap();
+    let player_action = Action::from_string(&player_choice);
   }
 }
