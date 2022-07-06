@@ -1,4 +1,7 @@
-#[derive(PartialEq)]
+#[derive(
+  Debug,
+  PartialEq,
+)]
 pub enum Action 
 {
   Rock,
