@@ -29,7 +29,7 @@ pub fn game_loop()
     println!("{player_action:?} vs {computer_action:?}");
     
     let verdict = Verdict::from_actions(&player_action, &computer_action);
-    println!("{verdict:?}");
+    println!("{verdict:?}\n");
     
   }
 }
