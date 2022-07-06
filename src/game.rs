@@ -1,4 +1,4 @@
-use crate::logic::Action;
+use crate::logic::*;
 
 use std::io::{Write, stdin, stdout};
 
@@ -25,6 +25,11 @@ pub fn game_loop()
     if player_action == Action::Other {continue}
     
     let computer_action: Action = rand::random();
+
     println!("{player_action:?} vs {computer_action:?}");
+    
+    let verdict = Verdict::from_actions(&player_action, &computer_action);
+    println!("{verdict:?}");
+    
   }
 }

@@ -13,6 +13,7 @@ pub enum Action
   Other
 }
 
+#[derive(Debug)]
 pub enum Verdict
 {
   Win,
@@ -22,10 +23,19 @@ pub enum Verdict
 
 impl Verdict
 {
-  // todo: actually implement this
+  // todo: learn how to not be yanderedev
   pub fn from_actions(player: &Action, computer: &Action) -> Self
   {
-    Verdict::Draw 
+    if player == &Action::Rock && computer == &Action::Paper {return Verdict::Loss}
+    else if player == &Action::Rock && computer == &Action::Scissors {return Verdict::Win}
+
+    else if player == &Action::Paper && computer == &Action::Rock {return Verdict::Win}
+    else if player == &Action::Paper && computer == &Action::Scissors {return Verdict::Loss}
+
+    else if player == &Action::Scissors && computer == &Action::Rock {return Verdict::Loss}
+    else if player == &Action::Scissors && computer == &Action::Paper {return Verdict::Win}
+
+    else {return Verdict::Draw}
   }
 }
 
