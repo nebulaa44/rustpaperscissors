@@ -1,7 +1,8 @@
-use rand::{
+use rand::
+{
   distributions::{Distribution, Standard},
   Rng,
-}; // 0.8.0
+};
 
 #[derive(Debug, PartialEq)]
 pub enum Action 
@@ -42,10 +43,12 @@ impl Action
   }
 }
 
-impl Distribution<Action> for Standard {
-  fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Action {
-      // match rng.gen_range(0, 3) { // rand 0.5, 0.6, 0.7
-      match rng.gen_range(0..=2) { // rand 0.8
+impl Distribution<Action> for Standard 
+{
+  fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Action 
+  {
+      match rng.gen_range(0..=2) 
+      {
           0 => Action::Rock,
           1 => Action::Paper,
           _ => Action::Scissors,
