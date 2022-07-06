@@ -23,8 +23,9 @@ pub fn game_loop()
 
     let player_action = Action::from_string(&player_choice);
     if player_action == Action::Other {continue}
-    
-    println!("You chose {player_action:?}");
 
+    let computer_action: Action = rand::random();
+
+    println!("{player_action:?} vs. {computer_action:?}");
   }
 }
