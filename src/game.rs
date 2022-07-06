@@ -6,12 +6,14 @@ pub fn game_loop()
 
   loop 
   {
+    // prompt user for their choice
     println!("[r]rock\n[p]aper\n[scissors]");
     print!("Enter your guess: ");
     stdout()
       .flush()
       .expect("Could not flush output");
 
+    // actually read the guess
     player_choice.clear();
     stdin()
       .read_line(&mut player_choice)
