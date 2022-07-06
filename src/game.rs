@@ -9,7 +9,7 @@ pub fn game_loop()
   loop 
   {
     // prompt user for their choice
-    println!("[r]rock\n[p]aper\n[scissors]");
+    println!("[r]rock\n[p]aper\n[s]cissors\n[q]uit");
     print!("Enter your guess: ");
     stdout()
       .flush()
@@ -20,6 +20,8 @@ pub fn game_loop()
     stdin()
       .read_line(&mut player_choice)
       .expect("Could not read input");
+
+    if player_choice.trim() == "q" {return}
 
     let player_action = Action::from_string(&player_choice);
     if player_action == Action::Other {continue}
