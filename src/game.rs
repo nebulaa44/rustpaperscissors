@@ -22,5 +22,7 @@ pub fn game_loop()
       .expect("Could not read input");
 
     let player_action = Action::from_string(&player_choice);
+
+    if player_action == Action::Other {continue}
   }
 }
