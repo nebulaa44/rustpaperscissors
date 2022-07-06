@@ -3,16 +3,29 @@ use rand::{
   Rng,
 }; // 0.8.0
 
-#[derive(
-  Debug,
-  PartialEq,
-)]
+#[derive(Debug, PartialEq)]
 pub enum Action 
 {
   Rock,
   Paper,
   Scissors,
   Other
+}
+
+pub enum Verdict
+{
+  Win,
+  Draw,
+  Loss
+}
+
+impl Verdict
+{
+  // todo: actually implement this
+  pub fn from_actions(player: &Action, computer: &Action) -> Self
+  {
+    Verdict::Draw 
+  }
 }
 
 impl Action
